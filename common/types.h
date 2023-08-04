@@ -20,9 +20,11 @@ typedef i8        b8;
 typedef i32       b32;
 typedef i64       b64;
 
-union m128 
+union m128
 {
-  __m128 simd;
+  __m128  simd;
+  __m128d simdf;
+  __m128i simdi;
 
   i64    __i64[2];
   u64    __u64[2];
@@ -39,6 +41,27 @@ union m128
 
   u8     __u8[16];
   i8     __i8[16];
+};
+
+union m256
+{
+  __m256 simd;
+
+  i64    __i64[4];
+  u64    __u64[4];
+
+  f64    __f64[4];
+
+  i32    __i32[8];
+  u32    __u32[8];
+
+  f32    __f32[8];
+
+  u16    __u16[16];
+  i16    __i16[16];
+
+  u8     __u8[32];
+  i8     __i8[32];
 };
 
 #define unused(variable) (void) (variable)
