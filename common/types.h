@@ -22,8 +22,9 @@ typedef i64       b64;
 
 union m128
 {
-  __m128  simd;
-  __m128d simdf;
+  __m128  simd_f32;
+  __m128d simd_f64;
+
   __m128i simdi;
 
   i64    __i64[2];
@@ -42,6 +43,12 @@ union m128
   u8     __u8[16];
   i8     __i8[16];
 };
+
+static inline __m64 m64(u64 x)
+{
+  __m64 res = *((__m64 *) &x);
+  return(res);
+}
 
 union m256
 {
