@@ -6,6 +6,7 @@ layout debug
 define hook-next
 info args
 info locals
+refresh
 end
 
 break main

@@ -16,7 +16,7 @@ if [ ! -d "$BUILD_DIR" ]; then
 fi
 
 pushd $BUILD_DIR
-g++ $DEBUG_FLAGS -fdiagnostics-show-caret -g -ggdb -gdwarf -g3 -Og -O0 -p -fno-exceptions -fno-stack-protector -fno-rtti -save-temps $INCLUDES -nostdinc++ -D_GNU_SOURCE $SOURCES -o $BIN_NAME
+g++ $DEBUG_FLAGS -march=skylake -fdiagnostics-show-caret -g -ggdb -gdwarf -g3 -Og -O0 -p -fno-exceptions -fno-stack-protector -fno-rtti -save-temps $INCLUDES -nostdinc++ -D_GNU_SOURCE $SOURCES -o $BIN_NAME
 
   chmod +x $BIN_NAME
   cp ../../utils/.gdbinit .gdbinit
