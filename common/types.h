@@ -1,4 +1,5 @@
 #ifndef TYPES_H
+#include <intrin.h>
 #include <stdint.h> 
 
 typedef uint8_t   u8;
